@@ -8,11 +8,19 @@ input.addEventListener("blur", (event) => {
   const valueLength = event.target.value.length;
   const requiredLength = Number(event.target.getAttribute("data-length"));
 
+  function addValidClass(element) {
+    element.classList.remove("invalid");
+    element.classList.add("valid");
+  }
+
+  function addInvalidClass(element) {
+    element.classList.remove("valid");
+    element.classList.add("invalid");
+  }
+
   if (valueLength === requiredLength) {
-    event.target.classList.remove("invalid");
-    event.target.classList.add("valid");
+    addValidClass(event.target);
   } else {
-    event.target.classList.remove("valid");
-    event.target.classList.add("invalid");
+    addInvalidClass(event.target);
   }
 });

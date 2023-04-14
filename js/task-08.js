@@ -7,7 +7,7 @@ loginForm.addEventListener("submit", (event) => {
 
   const elements = event.target.elements;
 
-  if (!elements.email.value || !elements.password.value) {
+  if (!elements.email.value.trim() || !elements.password.value.trim()) {
     alert("Будь ласка,заповніть всі поля!");
     return;
   }
